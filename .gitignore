@@ -1,0 +1,8 @@
+*.tgz
+*.lock
+.idea/
+.DS_Store
+*.terraform
+*.hcl
+*.plan
+*tfstate*
