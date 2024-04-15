@@ -1,3 +1,4 @@
-output "time" {
-  value = plantimestamp()
+resource "local_file" "foo" {
+  content  = "Time is: ${plantimestamp()}"
+  filename = "${path.module}/time"
 }
