@@ -5,6 +5,8 @@
  * @return
  */
 def call(config) {
+  def envsJson = readJSON text: "${params.environments}"
+
   stage('Check Plans') {
     for (env in envsJson) {
       stage("Terraform Plan: $env.name") {
