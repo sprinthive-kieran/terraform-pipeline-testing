@@ -1,15 +1,14 @@
 #!/usr/bin/groovy
 
 /**
- * @param config.environment: The environment being planned
- * @param config.workspace: The Terraform workspace this environment lives in
+ * @param config.environments: JSON Array of environments to plan
  * @return
  */
 def call(config) {
         stage('Check Plans') {
             steps {
                 script {
-                      for (env in config.envsJson) {
+                      for (env in config.environments) {
                         stage("Terraform Plan: $env.name") {
                              sh "pwd"
                               echo "$env.name"
